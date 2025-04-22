@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="styles.css">
+        <title>Bank card</title>
+    </head>
+    <body>
+        <div class="container">
+            <form action="#">
+                <div class="bank_card">
+                    <img class="card_bg" src="images/17.jpeg" alt="card">
+                    <img class="halogram" src="images/chip.png" alt="halogram">
+                    <img class="visa_logo" src="images/visa.png" alt="visa_logo">
+                    <p>
+                    ####&nbsp;&nbsp;####&nbsp;&nbsp;####&nbsp;&nbsp;####
+                    </p>
+                    <div class="name"><span>Card &nbsp;&nbsp;Holder</span>FULL &nbsp;&nbsp;NAME</div>
+                    <div class="ex_date"><span>Expires</span>MM/YY</div>    
+                </div>
+                <div class="info_side">
+                    <div class="card_num">
+                        <label class="label_number" for="number">Card Number</label><br>
+                        <input class="input_number" type="text" id="number">
+                    </div>
+                    <div class="card_holder">
+                        <label class="label_holder" for="holder">Card Holders</label><br>
+                        <input class="input_holder" type="text" id="holder">
+                    </div>
+                    <div class="expire_date">
+                        <label class="label_expire" for="month">Expiration Date</label><br>
+                        <select class="sel_expire" name="" id="month">
+                        <option value="">Month</option>
+                        <option value="">01</option>
+                        <option value="">02</option>
+                        <option value="">03</option>
+                        <option value="">04</option>
+                        <option value="">05</option>
+                        <option value="">06</option>
+                        <option value="">07</option>
+                        <option value="">08</option>
+                        <option value="">09</option>
+                        <option value="">10</option>
+                        <option value="">11</option>
+                        <option value="">12</option>
+                      </select>
+                    </div>    
+                    <div class="year">
+                       <select class="sel_year" name="year" id="year">
+                            <option value="">Year</option>
+                            <option value="">2021</option>
+                            <option value="">2022</option>
+                            <option value="">2023</option>
+                            <option value="">2024</option>
+                            <option value="">2025</option>
+                            <option value="">2026</option>
+                            <option value="">2027</option>
+                            <option value="">2028</option>
+                            <option value="">2029</option>
+                            <option value="">2030</option>
+                        </select>
+                    </div> 
+                    <div class="cvv">    
+                        <label class="label_cvv" for="cvv">CVV</label><br>
+                        <input class="input_cvv" type="text" id="cvv">
+                    </div>
+                    <div class="sub">
+                        <input class="input_sub" type="button" value="Submit">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </body>
+</html>

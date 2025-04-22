@@ -1,0 +1,78 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "open sans", sans-serif;
+}
+.head_line {
+  width: 800px;
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+span {
+  font-size: 16px;
+  font-style: italic;
+  cursor: pointer;
+}
+ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+li {
+  list-style-type: none;
+  margin: 10px;
+  font-size: 13px;
+}
+li:hover {
+  color: #6c63ff;
+  cursor: pointer;
+}
+.start_btn {
+  background-color: #6c63ff;
+  width: 90px;
+  height: 30px;
+  text-align: center;
+  line-height: 30px;
+  border-radius: 30px;
+  color: white;
+}
+.start_btn:hover {
+  color: white;
+}
+.main_line {
+  width: 800px;
+  height: 600px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+h2 {
+  font-size: 25px;
+}
+p {
+  font-size: 12px;
+  margin: 35px 0;
+}
+button {
+  all: unset;
+  width: 100px;
+  height: 30px;
+  border-radius: 30px;
+  background-color: #6c63ff;
+  font-size: 13px;
+  text-align: center;
+  color: white;
+  cursor: pointer;
+}
+img {
+  width: 350px;
+}
