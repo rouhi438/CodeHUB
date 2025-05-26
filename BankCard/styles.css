@@ -6,83 +6,162 @@
   font-family: "lato", sans-serif;
 }
 body {
-  background-color: #ddeefc;
+  background: linear-gradient(to right, rgb(146, 206, 146), rgb(249, 249, 120));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
 }
 .container {
-  width: 600px;
-  height: 800px;
-  margin: 100px auto;
-  position: relative;
+  width: 500px;
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-.bank_card .card_bg {
-  width: 320px;
+.card-container {
   height: 220px;
-  position: absolute;
-  left: 140px;
-  border-radius: 12px;
+  width: 350px;
+  position: relative;
+  perspective: 1000px;
   z-index: 2;
+}
+.bankcard-front,
+.bankcard-back {
+  height: 220px;
+  width: 350px;
+
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
     rgba(0, 0, 0, 0.22) 0px 10px 10px;
-}
-.halogram {
-  width: 45px;
-  z-index: 3;
   position: absolute;
-  left: 160px;
-  top: 20px;
+  backface-visibility: hidden;
+  transition: transform 0.6s;
 }
-.visa_logo {
-  z-index: 3;
-  width: 65px;
+
+/* ================ Animation Styles ==========*/
+.bankcard-front {
+  background-image: url(images/602b52489ee8e.jpg);
+  padding: 20px;
+  transform: rotateY(0deg);
+  z-index: 2;
+}
+.bankcard-front.rotate-front {
+  transform: rotateY(180deg);
+}
+.bankcard-back {
+  background-image: url(images/autumn-pics-5.jpg);
+  background-size: cover;
+  background-position: center;
+  transform: rotateY(-180deg);
+  z-index: 1;
+}
+.bankcard-back.rotate-back {
+  transform: rotateY(0deg);
+}
+/* ============================================*/
+
+.bankcard-back p {
+  width: 100%;
+  background-color: black;
   height: 40px;
-  position: absolute;
-  right: 160px;
-  top: 20px;
+  margin-top: 30px;
 }
-.bank_card p {
-  font-size: 23px;
-  font-weight: bold;
+.cvv-backcard {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+}
+.cvv-back {
+  display: flex;
+  flex-direction: column;
   position: absolute;
-  z-index: 3;
-  left: 160px;
-  top: 100px;
+  bottom: 30px;
+  left: 25px;
+}
+.cvv-text {
+  font-size: 12px;
   color: #fff;
-  letter-spacing: 2px;
 }
-.name {
-  position: absolute;
-  left: 160px;
-  z-index: 3;
-  top: 165px;
-  color: #fff;
-  letter-spacing: 0px;
-  font-size: 14px;
-}
-.name span {
-  display: block;
+.cvv-number {
+  margin-top: 5px;
+  width: 40px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  border-radius: 5px;
   font-size: 12px;
 }
-.ex_date {
+.bankcard-back img {
+  width: 75px;
+  height: 45px;
   position: absolute;
-  right: 160px;
-  z-index: 3;
-  top: 165px;
-  color: #fff;
-  letter-spacing: 0px;
-  font-size: 14px;
+  right: 20px;
+  bottom: 25px;
 }
-.ex_date span {
-  display: block;
+.lables {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.halogram {
+  width: 60px;
+}
+.visa_logo {
+  width: 75px;
+}
+.card-number {
+  width: 100%;
+  font-size: 28px;
+  text-align: center;
+  padding: 5px;
+  border-radius: 6px;
+  color: #fff;
+  font-weight: bold;
+}
+.holder-card {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.holder-card span {
   font-size: 12px;
   letter-spacing: 1px;
 }
+.card-name {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: #fff;
+}
+.ex-date {
+  display: flex;
+  flex-direction: column;
+  color: #fff;
+}
+.validDate span {
+  font-size: 16px;
+  color: #fff;
+}
+
+/*==================================*/
+form {
+  position: absolute;
+  top: 200px;
+}
 .info_side {
+  position: relative;
   width: 420px;
   height: 450px;
   background-color: #f3f4f7;
-  position: absolute;
-  top: 100px;
-  left: 90px;
+  display: flex;
+  flex-direction: column;
   border-radius: 10px;
   padding: 25px;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
@@ -103,10 +182,7 @@ body {
   position: absolute;
   top: 220px;
 }
-.label_number,
-.card_holder .label_holder,
-.label_expire,
-.label_cvv {
+label {
   font-size: 12px;
 }
 .card_holder .input_holder {
@@ -126,7 +202,6 @@ body {
   margin-top: 5px;
   border: 1px solid rgb(163, 173, 177);
   border-radius: 5px;
-  outline: none;
 }
 .year {
   position: absolute;
@@ -144,7 +219,7 @@ body {
   bottom: 94px;
   right: 25px;
 }
-.cvv .input_cvv {
+.cvv #input_cvv {
   width: 110px;
   padding: 10px;
   margin-top: 5px;
@@ -155,7 +230,7 @@ body {
   position: absolute;
   bottom: 20px;
 }
-.sub .input_sub {
+#sub-btn {
   width: 370px;
   padding: 10px;
   font-weight: bold;
@@ -166,13 +241,14 @@ body {
   cursor: pointer;
   border: none;
 }
+input[type="number"]:hover,
 input[type="text"]:hover {
   border: 1px solid lightskyblue;
 }
 input {
   outline: none;
 }
-.expire_date .sel_expire,
-.sel_year:hover:hover {
+.sel_expire:hover,
+.sel_year:hover {
   border: 1px solid lightskyblue;
 }
