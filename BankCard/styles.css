@@ -50,7 +50,7 @@ body {
     width: 320px;
   }
   .card-number p {
-    font-size: 25px;
+    font-size: 22px;
   }
 
   .input_number,
@@ -191,7 +191,6 @@ form {
   padding: 25px;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
     rgba(0, 0, 0, 0.22) 0px 10px 10px;
-  background-color: yellow;
 }
 .card_num {
   position: absolute;
