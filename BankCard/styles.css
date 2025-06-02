@@ -8,29 +8,29 @@
 body {
   background: linear-gradient(to right, rgb(146, 206, 146), rgb(249, 249, 120));
   display: flex;
-  align-items: center;
   justify-content: center;
   height: 100vh;
+  padding-top: 100px;
 }
 .container {
-  width: 500px;
-  height: 600px;
+  width: 420px;
+  height: 400px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
 }
 .card-container {
   height: 220px;
   width: 350px;
-  position: relative;
+  position: absolute;
   perspective: 1000px;
   z-index: 2;
 }
 .bankcard-front,
 .bankcard-back {
-  height: 220px;
-  width: 350px;
-
+  height: 100%;
+  width: 100%;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
@@ -41,6 +41,29 @@ body {
   position: absolute;
   backface-visibility: hidden;
   transition: transform 0.6s;
+}
+@media screen and (max-width: 420px) {
+  .container {
+    width: 350px;
+  }
+  .card-container {
+    width: 320px;
+  }
+  .card-number p {
+    font-size: 25px;
+  }
+
+  .input_number,
+  .input_holder,
+  #sub-btn {
+    width: 250px;
+  }
+  .sel_expire,
+  .sel_year,
+  #input_cvv {
+    width: 90px;
+    margin: 0 5px;
+  }
 }
 
 /* ================ Animation Styles ==========*/
@@ -82,6 +105,7 @@ body {
   position: absolute;
   bottom: 30px;
   left: 25px;
+  padding: 5px 10px;
 }
 .cvv-text {
   font-size: 12px;
@@ -121,7 +145,6 @@ body {
   font-size: 28px;
   text-align: center;
   padding: 5px;
-  border-radius: 6px;
   color: #fff;
   font-weight: bold;
 }
@@ -139,11 +162,13 @@ body {
   flex-direction: column;
   justify-content: space-between;
   color: #fff;
+  padding: 5px;
 }
 .ex-date {
   display: flex;
   flex-direction: column;
   color: #fff;
+  padding: 5px 10px;
 }
 .validDate span {
   font-size: 16px;
@@ -153,7 +178,7 @@ body {
 /*==================================*/
 form {
   position: absolute;
-  top: 170px;
+  top: 110px;
 }
 .info_side {
   position: relative;
@@ -166,6 +191,7 @@ form {
   padding: 25px;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
     rgba(0, 0, 0, 0.22) 0px 10px 10px;
+  background-color: yellow;
 }
 .card_num {
   position: absolute;
@@ -197,8 +223,8 @@ label {
   bottom: 93px;
 }
 .expire_date .sel_expire {
-  width: 110px;
   padding: 9px;
+  width: 110px;
   margin-top: 5px;
   border: 1px solid rgb(163, 173, 177);
   border-radius: 5px;
@@ -220,8 +246,8 @@ label {
   right: 25px;
 }
 .cvv #input_cvv {
-  width: 110px;
   padding: 10px;
+  width: 120px;
   margin-top: 5px;
   border: 1px solid rgb(163, 173, 177);
   border-radius: 5px;
@@ -251,4 +277,8 @@ input {
 .sel_expire:hover,
 .sel_year:hover {
   border: 1px solid lightskyblue;
+}
+.border {
+  border: 3px solid lightblue;
+  border-radius: 8px;
 }

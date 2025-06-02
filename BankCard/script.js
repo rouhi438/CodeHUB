@@ -11,15 +11,28 @@ inputNumber.addEventListener("input", function () {
   const formatted = maskedValue.match(/.{1,4}/g).join(" ");
 
   cardNumber.innerHTML = formatted;
+  cardNumber.classList.add("border");
+  inputNumber.addEventListener("blur", function () {
+    cardNumber.classList.remove("border");
+  });
+});
+inputNumber.addEventListener("blur", function () {
+  cardNumber.classList.remove("border");
 });
 
 // Adding Card Holder
+const cardNameBox = document.querySelector(".card-name");
 const cardName = document.querySelector(".cardName");
 inputHolder.addEventListener("input", function () {
   cardName.innerHTML = inputHolder.value;
+  cardNameBox.classList.add("border");
+  inputHolder.addEventListener("blur", () => {
+    cardNameBox.classList.remove("border");
+  });
 });
 
 // Adding Month and Year on the card
+const expiresBox = document.querySelector(".ex-date");
 const validMonth = document.querySelector(".validMonth");
 const validYear = document.querySelector(".validYear");
 
@@ -28,10 +41,14 @@ const selectYear = document.getElementById("year");
 
 selectMonth.addEventListener("change", function () {
   validMonth.innerHTML = selectMonth.value;
-});
-
-selectYear.addEventListener("change", function () {
-  validYear.innerHTML = selectYear.value;
+  expiresBox.classList.add("border");
+  selectYear.addEventListener("change", function () {
+    validYear.innerHTML = selectYear.value;
+    expiresBox.classList.add("border");
+  });
+  selectMonth.addEventListener("blur", () => {
+    expiresBox.classList.remove("border");
+  });
 });
 
 // Adding CVV number and rotate card to other side
@@ -39,17 +56,20 @@ selectYear.addEventListener("change", function () {
 const inputCvv = document.getElementById("input_cvv");
 const bankcardFront = document.querySelector(".bankcard-front");
 const bankcardBack = document.querySelector(".bankcard-back");
+const cvvBackBox = document.querySelector(".cvv-back");
 
 inputCvv.addEventListener("focus", () => {
   inputCvv.style.border = "1px solid lightskyblue";
   bankcardFront.classList.add("rotate-front");
   bankcardBack.classList.add("rotate-back");
+  cvvBackBox.classList.add("border");
 });
 
 inputCvv.addEventListener("blur", () => {
   inputCvv.style.border = "1px solid rgb(163, 173, 177)";
   bankcardFront.classList.remove("rotate-front");
   bankcardBack.classList.remove("rotate-back");
+  cvvBackBox.classList.remove("border");
 });
 
 const cvvNumber = document.querySelector(".cvv-number");
